@@ -1,0 +1,86 @@
+html{
+    height: 100%;
+}
+
+body{
+    background: rgb(22, 22, 24) no-repeat;
+}
+
+.title {
+    font-family: 'Lexend Mega', sans-serif;
+    text-align: center;
+    color: #209d94;
+    font-size: 15px;
+}
+
+
+.flex-container{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 40em;
+    min-width: 10em;
+    justify-content: center;
+/*    border: #211c1c 5px solid;*/
+    margin: auto;
+
+}
+
+.card{
+    height: 10em;
+    width: 10em;
+    position: relative;
+
+    transition: all 0.5s linear;
+    transform-style: preserve-3d;
+
+    margin: 0.3em;
+
+}
+
+.front,.back{
+    height: 100%;
+    width: 100%;
+    border-radius: 0.5em;
+    font-family: 'Roboto', sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    transform-style: preserve-3d;
+
+    box-shadow: 0 0 5px rgba(0,0,0,0.87);
+
+}
+
+.front{
+    background-color: rgb(22, 22, 24);
+    z-index: 2;
+    backface-visibility: hidden;
+    color: #209d94;
+    border: 1px solid #209d94;
+}
+
+.back{
+    background-color: #209d94;
+    z-index: 1;
+    transform: rotateY(180deg);
+    color: white;
+
+
+}
+
+.card:hover {
+    transform: rotateY(180deg) scale(1.05);
+    order: 0;
+    z-index: 3;
+
+}
+
+.flex-container{
+    perspective: 1000px;
+}
+
+
+
